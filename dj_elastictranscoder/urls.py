@@ -1,7 +1,7 @@
 import django
 
 
-if django.VERSION >= (2, 2):
+if django.VERSION >= (1, 9):
     from django.conf.urls import url
     from dj_elastictranscoder import views
 
