@@ -47,17 +47,17 @@ def aws_endpoint(request):
         job.message = webhook
         job.state = 1
         job.save()
-        transcode_onprogress.send(sender=None, job=job, job_response=data)
+        transcode_onprogress.send(sender=None, {'job':job, 'job_response':data})
     elif state == 'COMPLETED':
         job.message = webhook
         job.state = 4
         job.save()
-        transcode_oncomplete.send(sender=None, job=job, job_response=data)
+        transcode_oncomplete.send(sender=None, {'job':job, 'job_response':data})
     elif state == 'ERROR':
         job.message = webhook
         job.state = 2
         job.save()
-        transcode_onerror.send(sender=None, job=job, job_response=data)
+        transcode_onerror.send(sender=None, {'job':job, 'job_response':data})
     else:
         raise RuntimeError('Invalid state')
 
