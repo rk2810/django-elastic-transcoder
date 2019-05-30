@@ -24,12 +24,12 @@ if sys.argv[-1] == 'wheel':
     sys.exit()
 
 setup(
-    name='django-elastic-transcoder',
+    name='django2-elastic-transcoder',
     version=get_version(),
     description="Django with AWS elastic transcoder",
     long_description=open('README.rst').read(),
-    author='tzangms',
-    author_email='tzangms@streetvoice.com',
+    author='rohanK',
+    author_email='rohan.kumquat@gmail.com',
     url='http://github.com/StreetVoice/django-elastic-transcoder',
     license='MIT',
     packages=find_packages(exclude=('testsapp', )),
@@ -37,7 +37,7 @@ setup(
     zip_safe=False,
     install_requires=[
         "boto3 >= 1.1",
-        "django >= 1.3, < 1.10",
+        "django >= 1.3, < 2.3",
         "qiniu >= 7.0.8",
     ],
     classifiers=[
